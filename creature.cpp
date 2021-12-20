@@ -3,26 +3,23 @@
 using namespace std;
 
 ////////////////////////////////////////////
-Creature::Creature(string &name, int lifetime) {
-    cout << "Using creature class" << endl;
+Creature::Creature(string &name, Creature_society society, int lifetime, int threshold) {
+    cout << "Creature constructor" << endl;
     this->name = name;
     this->expected_lifetime = lifetime;
-    cout << "Creature's name: " << this->name << 
-    " Creature's lifetime: " << this->expected_lifetime << endl;
+    this->threshold = threshold;
+    this->my_society = &society;
+    cout << "Creature's name: " << name << 
+    " /Creature's lifetime: " << expected_lifetime << endl;
 }
 
 bool Creature::is_a_zompie() const {
-    if (Creature::expected_lifetime == 0) {
+    if (expected_lifetime == 0) {
         return true;
     }
     return false;
 }
 
-bool Creature::is_a_good() const{
-    cout << "virtual -> is_a_good" << endl;
-    return true;
-}
-
 Creature::~Creature() {
-    cout << " Using creature destructor" << endl;
+    cout << " Creature destructor" << endl;
 }

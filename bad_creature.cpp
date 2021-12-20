@@ -3,13 +3,9 @@
 using namespace std;
 
 ////////////////////////////////////////////
-Bad_creature::Bad_creature(string &name, int lifetime, int threshlod)
-    : Creature(name, lifetime) {
+Bad_creature::Bad_creature(string &name, Creature_society society, int lifetime, int threshold)
+    : Creature(name, society, lifetime, threshold) {
     cout << "Creation of a bad creature" << endl;
-}
-
-bool Bad_creature::is_a_good() const {
-    return false;
 }
 
 void Bad_creature::clone() const {
