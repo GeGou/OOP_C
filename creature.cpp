@@ -10,7 +10,7 @@ Creature::Creature(string &name, Creature_society society, int lifetime, int thr
     this->my_society = &society;
     this->society_pos = creat_pos;
     cout << "Created a creature with name: " << name << 
-    " ,lifetime: " << lifetime << endl;
+    " /lifetime: " << lifetime << endl;
 }
 
 Creature::Creature(const Creature& c) {
@@ -31,5 +31,5 @@ bool Creature::is_a_zompie() const {
 }
 
 Creature::~Creature() {
-    cout << " Creature destructor" << endl;
+    cout << "Creature destructor" << endl;
 }

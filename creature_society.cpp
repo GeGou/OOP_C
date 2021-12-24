@@ -4,7 +4,7 @@ using namespace std;
 
 ////////////////////////////////////////////
 Creature_society::Creature_society(int n, int l, int good_thrsh, int bad_thrsh) {
-    cout << "Creation of the creature society" << endl;
+    cout << "Creation of the creatures society" << endl;
 
     // arrays with names for good and bad creatures
     string good[5] = {"Ga", "Gb", "Gc", "Gd", "Ge"};
@@ -29,6 +29,7 @@ Creature_society::Creature_society(int n, int l, int good_thrsh, int bad_thrsh) 
             new_name.append(to_string(i));    // making the name unique
             creatures[i] = new Bad_creature(new_name, *this, l, bad_thrsh, i);
         }
+        cout << "END OF LOOP" << endl;
     }
 }
 
@@ -46,10 +47,11 @@ void Creature_society::clone_next(int pos) {
         temp_pos = -1;
     }
     creatures[pos]->clone(creatures[++temp_pos]);
+    good_creatures++;
 }
 
 void Creature_society::clone_zobies(int pos) {
-
+    zobies++;
 }
 
 int Creature_society::no_of_good() {
@@ -66,5 +68,5 @@ Creature_society::~Creature_society() {
     // }
     // delete[] this->creatures;
 
-    cout << "Destuction of the creature society" << endl;
+    cout << "Destuction of the creatures society" << endl;
 }

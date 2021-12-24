@@ -23,9 +23,11 @@ void Good_creature::clone(Creature *creature) {
     // delete my_society->external_access(temp_pos);
     // my_society->external_access(temp_pos) = new Good_creature(*this);
     creature = new Good_creature(*this);
+    cout << "Good creature " << name << " was cloned." << endl;
 }
 
 void Good_creature::bless() {
+        // cout << "BLESSSS" << endl;
     if (lifetime > 0) {        // is_a_zobie == false
         if (++lifetime > threshold) {
             my_society->clone_next(society_pos);    // clone creature from society_pos
@@ -40,7 +42,7 @@ void Good_creature::bless() {
 void Good_creature::beat() {
     if (lifetime > 0) {
         lifetime--;
-        cout << "Good creature: " << name << " has been beat." << endl;
+        cout << "Good creature: " << name << " has been beated." << endl;
     }
     else {
         cout << "Creature: " << name << " is a zobie." << endl;
