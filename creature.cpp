@@ -3,11 +3,11 @@
 using namespace std;
 
 ////////////////////////////////////////////
-Creature::Creature(string &name, Creature_society society, int lifetime, int threshold, int creat_pos) {
+Creature::Creature(string &name, Creature_society *society, int lifetime, int threshold, int creat_pos) {
     this->name = name;
     this->lifetime = lifetime;
     this->threshold = threshold;
-    this->my_society = &society;
+    this->my_society = society;
     this->society_pos = creat_pos;
     cout << "Created a creature with name: " << name << 
     " /lifetime: " << lifetime << endl;

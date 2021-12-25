@@ -21,15 +21,15 @@ Creature_society::Creature_society(int n, int l, int good_thrsh, int bad_thrsh) 
         if (x == 0) {
             string new_name = good[rand() % 5];
             new_name.append(to_string(i));      // making the name unique
-            creatures[i] = new Good_creature(new_name, *this, l, good_thrsh, i);
+            creatures[i] = new Good_creature(new_name, this, l, good_thrsh, i);
             good_creatures++;
         }
         else {
             string new_name = bad[rand() % 5];
             new_name.append(to_string(i));    // making the name unique
-            creatures[i] = new Bad_creature(new_name, *this, l, bad_thrsh, i);
+            creatures[i] = new Bad_creature(new_name, this, l, bad_thrsh, i);
         }
-        cout << "END OF LOOP" << endl;
+        cout << "----------------------------------" << endl;
     }
 }
 
@@ -63,10 +63,9 @@ int Creature_society::no_of_zobies() {
 }
 
 Creature_society::~Creature_society() {
-    // for (int i = 0 ; i < this->no_of_creatures ; i++) {
-    //     delete this->creatures[i];
-    // }
-    // delete[] this->creatures;
-
+    for (int i = 0 ; i < no_of_creatures ; i++) {
+        delete creatures[i];
+    }
+    delete[] creatures;
     cout << "Destuction of the creatures society" << endl;
 }

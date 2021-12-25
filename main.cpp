@@ -23,30 +23,27 @@ int main (int argc, char* argv[]) {
             return 0;
         }
 
-        // creating a society
-
-        Creature_society *my_society;
-        my_society = new Creature_society(n, l, good_thrsh, bad_thrsh);
-
-        // Creature_society my_society(n, l, good_thrsh, bad_thrsh);
         srand(time(NULL));      // the start of the generator
+        
+        // creating a society
+        Creature_society my_society(n, l, good_thrsh, bad_thrsh);
         // change the society via beat/bless
         for (int i = 0 ; i < m ; i++) {
             int rand_pos = rand() % n;       // selection of the position (creature)
             int rand_action = rand() % 2;        // 0 -> beat / 1 -> bless
             if (rand_action == 0) {
-                my_society->beat(rand_pos);
+                my_society.beat(rand_pos);
             }
             else {
-                my_society->bless(rand_pos);
+                my_society.bless(rand_pos);
             }
             cout << "MAIN: " << i << endl;
         }
         // results
-        if (my_society->no_of_good() == n) {
+        if (my_society.no_of_good() == n) {
             cout << "Good Dominates in the World" << endl;
         }
-        else if (my_society->no_of_zobies() == n) {
+        else if (my_society.no_of_zobies() == n) {
             cout << "This is a dead society" << endl;
         }
         else {

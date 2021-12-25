@@ -13,27 +13,27 @@ protected:
     int society_pos;
     Creature_society* my_society;
 public:
-    Creature(string&, Creature_society, int, int, int);    // name, society, lifetime, threshold, creat_pos
+    Creature(string&, Creature_society*, int, int, int);    // name, society, lifetime, threshold, creat_pos
     Creature(const Creature&);
     virtual ~Creature();
 
     bool is_a_zompie() const;
     virtual bool is_a_good() const = 0;
-    virtual void clone(Creature*) {}     // = 0 thelei pure virtual alla bgazei error 
-    virtual void bless() const {}
-    virtual void beat() const {}
+    virtual void clone(Creature*) const {}     // = 0 thelei pure virtual alla bgazei error 
+    virtual void bless() {}
+    virtual void beat() {}
 };
 
 ////////////////////////////////
 class Good_creature : public Creature {
 private:
 public:
-    Good_creature(string&, Creature_society, int, int, int);    // name, society, lifetime, threshold, creat_pos
+    Good_creature(string&, Creature_society*, int, int, int);    // name, society, lifetime, threshold, creat_pos
     Good_creature(const Good_creature&);
     ~Good_creature();
 
     bool is_a_good() const;
-    void clone(Creature*);
+    void clone(Creature*) const;
     void bless();
     void beat();
 };
@@ -42,12 +42,12 @@ public:
 class Bad_creature : public Creature {
 private:
 public:
-    Bad_creature(string&, Creature_society, int, int, int);
+    Bad_creature(string&, Creature_society*, int, int, int);
     Bad_creature(const Bad_creature&);
     ~Bad_creature();
 
     bool is_a_good() const;
-    void clone(Creature*);
+    void clone(Creature*) const;
     void bless();
     void beat();
 };
