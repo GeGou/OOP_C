@@ -42,11 +42,15 @@ void Creature_society::beat(int pos) {
 }
 
 void Creature_society::clone_next(int pos) {
+    
     int temp_pos;
+    cout << pos + 1 << "\t" << no_of_creatures << endl;
     if (pos + 1 == no_of_creatures) {
         temp_pos = -1;
     }
-    creatures[pos]->clone(creatures[++temp_pos]);
+    delete creatures[temp_pos];
+    creatures[temp_pos] = new Good_creature(creatures[pos]);
+    // creatures[pos]->clone(temp_pos);
     good_creatures++;
 }
 

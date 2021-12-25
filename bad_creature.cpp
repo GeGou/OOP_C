@@ -17,7 +17,7 @@ bool Bad_creature::is_a_good() const {
     return false; 
 }
 
-void Bad_creature::clone(Creature *creature) const {
+void Bad_creature::clone(int pos) const {
 
     cout << "Bad creature " << name << " was cloned." << endl;
 }

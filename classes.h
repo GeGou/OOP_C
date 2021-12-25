@@ -19,7 +19,7 @@ public:
 
     bool is_a_zompie() const;
     virtual bool is_a_good() const = 0;
-    virtual void clone(Creature*) const {}     // = 0 thelei pure virtual alla bgazei error 
+    virtual void clone(int) const {}     // = 0 thelei pure virtual alla bgazei error 
     virtual void bless() {}
     virtual void beat() {}
 };
@@ -33,7 +33,7 @@ public:
     ~Good_creature();
 
     bool is_a_good() const;
-    void clone(Creature*) const;
+    void clone(int) const;
     void bless();
     void beat();
 };
@@ -47,7 +47,7 @@ public:
     ~Bad_creature();
 
     bool is_a_good() const;
-    void clone(Creature*) const;
+    void clone(int) const;
     void bless();
     void beat();
 };
