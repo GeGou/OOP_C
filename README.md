@@ -8,7 +8,7 @@ g++ -o myprog main.cpp creature.cpp good_creature.cpp bad_creature.cpp creature_
 
 Εντολη εκτελεσης προγραμματος:
 
-./myprog 
+./myprog 50 150 1 1 1
 
 Εντολη για ελεχνος leaks και errors:
 

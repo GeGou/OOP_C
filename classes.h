@@ -63,6 +63,8 @@ public:
     Creature_society(int, int, int, int);       // no_of_creatures, lifetime, good_thrsh, bad_thrsh
     ~Creature_society();
     
+    void good_clone(int, const Good_creature&);
+    void bad_clone(int, const Bad_creature&);
     void bless(int);
     void beat(int);
     void clone_next(int);   // pos of the creeature in society

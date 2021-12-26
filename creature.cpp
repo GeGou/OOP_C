@@ -24,7 +24,7 @@ Creature::Creature(const Creature& c) {
 }
 
 bool Creature::is_a_zompie() const {
-    if (lifetime == 0) {
+    if (lifetime <= 0) {
         return true;
     }
     return false;

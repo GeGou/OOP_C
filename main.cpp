@@ -24,7 +24,6 @@ int main (int argc, char* argv[]) {
         }
 
         srand(time(NULL));      // the start of the generator
-        
         // creating a society
         Creature_society my_society(n, l, good_thrsh, bad_thrsh);
         // change the society via beat/bless
@@ -37,9 +36,12 @@ int main (int argc, char* argv[]) {
             else {
                 my_society.bless(rand_pos);
             }
-            cout << "MAIN: " << i << endl;
         }
+        cout << "\n    \\\\\\\\\\\\\\\\\\\\//////////" << endl;
         // results
+        cout << my_society.no_of_good() << endl;
+        cout << my_society.no_of_zobies() << endl;
+
         if (my_society.no_of_good() == n) {
             cout << "Good Dominates in the World" << endl;
         }
@@ -49,6 +51,7 @@ int main (int argc, char* argv[]) {
         else {
             cout << "Try again to improve the world" << endl;
         }
+        cout << "    //////////\\\\\\\\\\\\\\\\\\\\\n" << endl;
     }
     else {
         cout << "Wrong given arguments" << endl;
