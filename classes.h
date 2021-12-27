@@ -19,7 +19,7 @@ public:
 
     bool is_a_zompie() const;
     virtual bool is_a_good() const = 0;
-    virtual void clone(int) const {}     // = 0 thelei pure virtual alla bgazei error 
+    virtual void clone(int) const {}
     virtual void bless() {}
     virtual void beat() {}
 };
@@ -69,6 +69,7 @@ public:
     void beat(int);
     void clone_next(int);   // pos of the creeature in society
     void clone_zobies(int);
+    int no_of_cr(void) const;
     int no_of_good();
     int no_of_zobies();
 };

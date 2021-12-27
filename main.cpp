@@ -38,10 +38,8 @@ int main (int argc, char* argv[]) {
             }
         }
         cout << "\n    \\\\\\\\\\\\\\\\\\\\//////////" << endl;
+        
         // results
-        cout << my_society.no_of_good() << endl;
-        cout << my_society.no_of_zobies() << endl;
-
         if (my_society.no_of_good() == n) {
             cout << "Good Dominates in the World" << endl;
         }

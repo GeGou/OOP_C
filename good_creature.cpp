@@ -17,7 +17,7 @@ bool Good_creature::is_a_good() const {
     return true; 
 }
 
-void Good_creature::clone(int clone_pos) const {
+void Good_creature::clone(int clone_pos) const {    //clone_pos -> the position where the creature will be cloned
     my_society->good_clone(clone_pos, *this);
     cout << "Good creature " << name << " was cloned." << endl;
     cout << "\t--------------------" << endl;

@@ -22,7 +22,6 @@ Creature_society::Creature_society(int n, int l, int good_thrsh, int bad_thrsh) 
             string new_name = good[rand() % 5];
             new_name.append(to_string(i));      // making the name unique
             creatures[i] = new Good_creature(new_name, this, l, good_thrsh, i);
-            good_creatures++;
         }
         else {
             string new_name = bad[rand() % 5];
@@ -66,21 +65,23 @@ void Creature_society::clone_zobies(int pos) {
     }
 }
 
+int Creature_society::no_of_cr(void) const {
+    return no_of_creatures;
+}
+
+
 int Creature_society::no_of_good() {
-    int x = 0;
+    good_creatures = 0;
     for (int i = 0 ; i < no_of_creatures ; i++) {
-        if (creatures[i]->is_a_good() == true) {
+        if ((creatures[i]->is_a_good() == true) && (creatures[i]->is_a_zompie() == false)) {
             good_creatures++;
         }
-        else {
-            x++;
-        }
     }
-    cout << "INSIDE: " << x << endl;
     return good_creatures;
 }
 
 int Creature_society::no_of_zobies() {
+    zobies = 0;
     for (int i = 0 ; i < no_of_creatures ; i++) {
         if (creatures[i]->is_a_zompie() == true) {
             zobies++;

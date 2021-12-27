@@ -18,7 +18,12 @@ Creature::Creature(const Creature& c) {
     this->lifetime = c.lifetime;
     this->threshold = c.threshold;
     this->my_society = c.my_society;
-    this->society_pos = c.society_pos+1;
+    if (c.society_pos + 1 == my_society->no_of_cr()) {
+        this->society_pos = 0;
+    }
+    else {
+        this->society_pos = c.society_pos + 1;
+    }
     cout << "Created a creature by copy with name: " << name << 
     " lifetime: " << lifetime << endl;
 }
